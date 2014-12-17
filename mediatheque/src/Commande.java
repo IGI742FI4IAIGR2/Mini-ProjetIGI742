@@ -15,17 +15,17 @@ public class Commande {
 	/**
 	 * 
 	 */
-	public void numCommande;
+	public String numCommande;
 
 	/**
 	 * 
 	 */
-	public void dateCommande;
+	public Date dateCommande;
 
 	/**
 	 * 
 	 */
-	public void etatCommande;
+	public String etatCommande;
 
 
 

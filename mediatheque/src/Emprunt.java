@@ -15,12 +15,12 @@ public class Emprunt {
 	/**
 	 * 
 	 */
-	public void dateEmprunt;
+	public Date dateEmprunt;
 
 	/**
 	 * 
 	 */
-	public void dateRetour;
+	public Date dateRetour;
 
 
 

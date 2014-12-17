@@ -63,7 +63,8 @@ public class Employe extends Membre {
 	/**
 	 * 
 	 */
-	public void ajouterMembre() {
+	public Membre ajouterMembre() {
+		return null;
 		// TODO implement here
 	}
 

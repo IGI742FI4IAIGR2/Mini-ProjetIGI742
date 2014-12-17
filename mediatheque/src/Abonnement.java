@@ -15,12 +15,12 @@ public class Abonnement {
 	/**
 	 * 
 	 */
-	public void idAbonnement;
+	public int idAbonnement;
 
 	/**
 	 * 
 	 */
-	public void dateDebut;
+	public Date dateDebut;
 
 	/**
 	 * 

@@ -15,7 +15,7 @@ public class ExemplaireDVD implements SujetEmplacement {
 	/**
 	 * 
 	 */
-	public void codeExemplaire;
+	public String codeExemplaire;
 
 	/**
 	 * 
@@ -30,7 +30,7 @@ public class ExemplaireDVD implements SujetEmplacement {
 	/**
 	 * 
 	 */
-	public void emplacement;
+	public String emplacement;
 
 	/**
 	 * 
@@ -40,7 +40,25 @@ public class ExemplaireDVD implements SujetEmplacement {
 	/**
 	 * 
 	 */
-	public void listeObservateurEmplacement;
+	public ArrayList <MediathequeObservatrice>listeObservateurEmplacement;
+
+	@Override
+	public void ajouterObservateurEmplacement() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void supprimerObservateurEmplacement() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifierObservateurEmplacement() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 

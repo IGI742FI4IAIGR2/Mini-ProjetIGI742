@@ -15,7 +15,7 @@ public class DVD extends Produit {
 	/**
 	 * 
 	 */
-	public void reference;
+	public String reference;
 
 	/**
 	 * 
