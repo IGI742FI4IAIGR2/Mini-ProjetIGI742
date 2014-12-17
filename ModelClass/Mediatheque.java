@@ -4,12 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class Médiatheque implements MediathequeObservatrice {
+public class Mediatheque implements MediathequeObservatrice {
 
 	/**
 	 * 
 	 */
-	public Médiatheque() {
+	public Mediatheque() {
 	}
 
 	/**

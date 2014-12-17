@@ -10,6 +10,10 @@ public class Personne {
 		this.prenom=prenom;
 		
 	}
+	
+	public Personne(){
+		
+	}
 
 	// Getters & Setters
 	public String getNom() {
