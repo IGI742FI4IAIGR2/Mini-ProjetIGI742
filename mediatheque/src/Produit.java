@@ -25,17 +25,17 @@ public class Produit implements SujetDisponibilite {
 	/**
 	 * 
 	 */
-	public void resume;
+	public String resume;
 
 	/**
 	 * 
 	 */
-	public void editeur;
+	public String editeur;
 
 	/**
 	 * 
 	 */
-	public void listeObservateurDisponibilite;
+	// public ArrayList<> listeObservateurDisponibilite;
 
 	@Override
 	public void ajouterObservateurDispo() {
