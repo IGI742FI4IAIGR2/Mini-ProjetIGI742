@@ -6,18 +6,21 @@ import java.util.*;
  */
 public class Fabrique {
 
+	
 	/**
 	 * 
 	 */
-	public Fabrique() {
+	public Produit creerProduit(String titre, Date dateSortie, String resume, String editeur, String reference, GenreFilm genre) {
+		Produit produit = new DVD(titre,dateSortie,resume,editeur,reference,genre);
+		return produit;
 	}
-
-
+	
 	/**
 	 * 
 	 */
-	public void creerProduit() {
-		// TODO implement here
+	public Produit creerProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type) {
+		Produit produit = new Ouvrage(titre,dateSortie,resume,editeur,codeISBN,type);
+		return produit;
 	}
 
 	/**
@@ -30,15 +33,17 @@ public class Fabrique {
 	/**
 	 * 
 	 */
-	public void creerMembre() {
-		// TODO implement here
+	public Membre creerMembre(String nom, String prenom, String adresse, String numTelephone, Date dateNaissance) {
+		Membre membre = new Membre(nom, prenom, adresse, numTelephone, dateNaissance);
+		return membre;
 	}
 
 	/**
 	 * 
 	 */
-	public void creerEmprunt() {
-		// TODO implement here
+	public Emprunt creerEmprunt(ExemplaireDVD ex, Membre membre) {
+		Emprunt emprunt = new Emprunt(ex,membre);
+		return emprunt;
 	}
 
 	/**

@@ -3,48 +3,136 @@ import java.util.*;
 
 /**
  * 
+ * @author mikael
  */
 public class Mediatheque implements MediathequeObservatrice {
 
 	/**
 	 * 
 	 */
-	public Mediatheque() {
+	public Mediatheque(String nomC, String adresseC, Fabrique fabriqueC) {
+		this.nom=nomC;
+		this.adresse=adresseC;
+		this.fabrique=fabriqueC;
+	}
+
+	private String nom;
+	private String adresse;
+	Fabrique fabrique;
+	/**
+	 * @author mikael
+	 * Getter nom
+	 */
+	public String getNom(){
+		return this.nom;
+	}
+	/**
+	 * @author mikael
+	 * @ Getter adresse
+	 */
+	public String getAdresse(){
+		return this.adresse;
+	}
+
+
+
+	/**
+	 * @author mikael
+	 * @ changer l'emplacement d'un exemplaire DVD
+	 * @param ExemplaireDVD
+	 */
+	public void rapatrierExemplaire(ExemplaireDVD ex) {
+		ex.setEmplacment(ex.getMaMediatheque());
+	}
+	
+	/**
+	 * @author mikael
+	 * @ changer l'emplacement d'un exemplaire de livre
+	 * @param ExemplaireLivre
+	 */
+	public void rapatrierExemplaire(ExemplaireLivre ex) {
+		ex.setEmplacment(ex.getMaMediatheque());
+	}
+	
+	/**
+	 * emprunt d'un DVD
+	 * @author mikael
+	 * @param DVD
+	 */
+	public boolean emprunterProduit(DVD produit) {
+		ArrayList<ExemplaireDVD> listeExemplaires=produit.getListeExemplaires();
+		ExemplaireDVD ex;
+		boolean empruntPossible=false;
+		Iterator<ExemplaireDVD> it =listeExemplaires.iterator();
+		while(!empruntPossible | it.hasNext()){
+			ex = it.next();
+			if(ex.getDisponibilite()){
+				empruntPossible=true;
+			}
+		}
+		if(empruntPossible){
+			fabrique.creerEmprunt(ex);
+			ex.ajouterObservateurEmplacement();
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	/**
+	 * emprunt d'un Livre
+	 * @author mikael
+	 * @param DVD
+	 */
+	public boolean emprunterProduit(Ouvrage produit) {
+		ArrayList<ExemplaireDVD> listeExemplaires=produit.getListeExemplaires();
+		ExemplaireDVD ex;
+		boolean empruntPossible=false;
+		Iterator<ExemplaireDVD> it =listeExemplaires.iterator();
+		while(!empruntPossible | it.hasNext()){
+			ex = it.next();
+			if(ex.getDisponibilite()){
+				empruntPossible=true;
+			}
+		}
+		if(empruntPossible){
+			fabrique.creerEmprunt(ex);
+			ex.ajouterObservateurEmplacement();
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	/**
-	 * 
+	 * @author mikael
+	 * Reservation d'un produit
 	 */
-	public void nom;
-
-	/**
-	 * 
-	 */
-	public void adresse;
-
-
-
-
-
-	/**
-	 * 
-	 */
-	public void rapatrierExemplaire() {
-		// TODO implement here
+	public void reserverProduit(Produit produitAReserver, Membre membre) {
+		produitAReserver.ajouterObservateurDispo(membre);
 	}
 
 	/**
-	 * 
+	 * Rappatrier un exemplaire de DVD rendu dans une autre médiathèque
+	 * @author mikael
+	 * @param ExemplaireDVD ex
 	 */
-	public void emprunterProduit() {
-		// TODO implement here
+	public void verifierEmplacement(ExemplaireDVD ex) {
+		if(ex.getEmplacement()!=ex.getMaMediatheque()){
+			rapatrierExemplaire(ex);
+		}
+		ex.supprimerObservateurEmplacement(this);
 	}
-
 	/**
-	 * 
+	 * Rappatrier un exemplaire rendu de Livre dans une autre médiathèque
+	 * @author mikael
+	 * @param ExemplaireLivre ex
 	 */
-	public void reserverProduit() {
-		// TODO implement here
+	public void verifierEmplacement(ExemplaireLivre ex) {
+		if(ex.getEmplacement()!=ex.getMaMediatheque()){
+			rapatrierExemplaire(ex);
+		}
+		ex.supprimerObservateurEmplacement(this);
 	}
-
 }
