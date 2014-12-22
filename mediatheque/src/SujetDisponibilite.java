@@ -9,12 +9,12 @@ public interface SujetDisponibilite {
 	/**
 	 * 
 	 */
-	public void ajouterObservateurDispo();
+	public void ajouterObservateurDispo(Membre membre);
 
 	/**
 	 * 
 	 */
-	public void supprimerObservateurDispo();
+	public void supprimerObservateurDispo(Membre membre);
 
 	/**
 	 * 

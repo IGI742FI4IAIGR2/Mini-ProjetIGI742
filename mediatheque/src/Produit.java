@@ -12,39 +12,57 @@ public class Produit implements SujetDisponibilite {
 	public Produit() {
 	}
 
-	/**
-	 * 
-	 */
-	public String titre;
+	private String titre;
+	private Date dateSortie;
+	private String resume;
+	private String editeur;
+	private ArrayList<Exemplaire> listeExemplaires;
+	private ArrayList<Membre> listeObservateurDisponibilite;
 
-	/**
-	 * 
-	 */
-	public String dateSortie;
+	public String getTitre() {
+		return titre;
+	}
 
-	/**
-	 * 
-	 */
-	public String resume;
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
 
-	/**
-	 * 
-	 */
-	public String editeur;
+	public Date getDateSortie() {
+		return dateSortie;
+	}
 
-	/**
-	 * 
-	 */
-	// public ArrayList<> listeObservateurDisponibilite;
+	public void setDateSortie(Date dateSortie) {
+		this.dateSortie = dateSortie;
+	}
+
+	public String getResume() {
+		return resume;
+	}
+
+	public void setResume(String resume) {
+		this.resume = resume;
+	}
+
+	public String getEditeur() {
+		return editeur;
+	}
+
+	public void setEditeur(String editeur) {
+		this.editeur = editeur;
+	}
+	
+	public ArrayList<Exemplaire> getListeExemplaires(){
+		return this.listeExemplaires;
+	}
 
 	@Override
-	public void ajouterObservateurDispo() {
+	public void ajouterObservateurDispo(Membre membre) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void supprimerObservateurDispo() {
+	public void supprimerObservateurDispo(Membre membre) {
 		// TODO Auto-generated method stub
 		
 	}

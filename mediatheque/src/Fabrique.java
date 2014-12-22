@@ -23,8 +23,8 @@ public class Fabrique {
 		return produit;
 	}
 	
-	public ExemplaireDVD creerExemplaire(Produit produit){
-		ExemplaireDVD exemplaire = new ExemplaireDVD(produit);
+	public Exemplaire creerExemplaire(Produit produit){
+		Exemplaire exemplaire = new Exemplaire(produit);
 		return exemplaire;
 	}
 

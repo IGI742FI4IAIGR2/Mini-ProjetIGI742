@@ -52,7 +52,7 @@ public class Mediatheque implements MediathequeObservatrice {
 	 */
 	public boolean emprunterProduit(Produit produit, Membre membre) {
 		ArrayList<Exemplaire> listeExemplaires=produit.getListeExemplaires();
-		Exemplaire ex;
+		Exemplaire ex=null;
 		boolean empruntPossible=false;
 		Iterator<Exemplaire> it =listeExemplaires.iterator();
 		while(!empruntPossible | it.hasNext()){
