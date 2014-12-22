@@ -9,7 +9,7 @@ public class Emprunt {
 	/**
 	 * 
 	 */
-	public Emprunt(ExemplaireDVD exC, Membre membreC) {
+	public Emprunt(Exemplaire exC, Membre membreC) {
 		this.dateEmprunt= new Date();
 		this.ex=exC;
 		this.membre=membreC;
@@ -20,7 +20,7 @@ public class Emprunt {
 	 */
 	private Date dateEmprunt;
 	private Date dateRetour;
-	private ExemplaireDVD ex;
+	private Exemplaire ex;
 	private Membre membre;
 	
 	public Date getDateEmprunt(){
@@ -29,7 +29,7 @@ public class Emprunt {
 	public Date getDateRetour(){
 		return this.dateRetour;
 	}
-	public ExemplaireDVD getExemplaire(){
+	public Exemplaire getExemplaire(){
 		return this.ex;
 	}
 	public Membre getMembre(){
@@ -48,7 +48,7 @@ public class Emprunt {
 	}
 	
 	/**
-	 * Relance en cas d'emrpunt trop long
+	 * Relance en cas d'emprunt trop long
 	 */
 	
 

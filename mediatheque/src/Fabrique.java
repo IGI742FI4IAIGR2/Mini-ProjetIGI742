@@ -39,7 +39,7 @@ public class Fabrique {
 	/**
 	 * 
 	 */
-	public Emprunt creerEmprunt(ExemplaireDVD ex, Membre membre) {
+	public Emprunt creerEmprunt(Exemplaire ex, Membre membre) {
 		Emprunt emprunt = new Emprunt(ex,membre);
 		return emprunt;
 	}
