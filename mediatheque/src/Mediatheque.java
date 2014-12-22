@@ -50,24 +50,31 @@ public class Mediatheque implements MediathequeObservatrice {
 	 * @author mikael
 	 * @param Produit
 	 */
-	public boolean emprunterProduit(Produit produit, Membre membre) {
+	public void emprunterProduit(Produit produit, Membre membre) {
 		ArrayList<Exemplaire> listeExemplaires=produit.getListeExemplaires();
 		Exemplaire ex=null;
 		boolean empruntPossible=false;
-		Iterator<Exemplaire> it =listeExemplaires.iterator();
-		while(!empruntPossible | it.hasNext()){
-			ex = it.next();
-			if(ex.getDisponibilite()){
-				empruntPossible=true;
-			}
-		}
-		if(empruntPossible){
-			fabrique.creerEmprunt(ex,membre);
-			ex.ajouterObservateurEmplacement(this);
-			return true;
+		if(size(membre.getListeEmprunts)<5){
+			empruntPossible=true;
 		}
 		else{
-			return false;
+			System.out.print("Vous avez atteint le quota d'emprunt");
+		}
+		boolean empruntDispo=false;
+		Iterator<Exemplaire> it =listeExemplaires.iterator();
+		while(!empruntDispo | it.hasNext()){
+			ex = it.next();
+			if(ex.getDisponibilite()){
+				empruntDispo=true;
+			}
+		}
+		if(empruntPossible&&empruntDispo){
+			fabrique.creerEmprunt(ex,membre);
+			ex.ajouterObservateurEmplacement(this);
+			System.out.print("Produit emprunté");
+		}
+		else{
+			System.out.print("Le produit n'est pas disponible, vous pouvez le réserver");
 		}
 	}
 
