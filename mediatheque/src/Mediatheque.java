@@ -38,19 +38,10 @@ public class Mediatheque implements MediathequeObservatrice {
 
 	/**
 	 * @author mikael
-	 * @ changer l'emplacement d'un exemplaire DVD
-	 * @param ExemplaireDVD
+	 * @ changer l'emplacement d'un exemplaire
+	 * @param Exemplaire
 	 */
-	public void rapatrierExemplaire(ExemplaireDVD ex) {
-		ex.setEmplacment(ex.getMaMediatheque());
-	}
-	
-	/**
-	 * @author mikael
-	 * @ changer l'emplacement d'un exemplaire de livre
-	 * @param ExemplaireLivre
-	 */
-	public void rapatrierExemplaire(ExemplaireLivre ex) {
+	public void rapatrierExemplaire(Exemplaire ex) {
 		ex.setEmplacment(ex.getMaMediatheque());
 	}
 	

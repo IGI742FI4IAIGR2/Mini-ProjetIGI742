@@ -4,12 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class ExemplaireDVD implements SujetEmplacement {
+public class Exemplaire implements SujetEmplacement {
 
 	/**
 	 * 
 	 */
-	public ExemplaireDVD() {
+	public Exemplaire(Produit produit) {
 	}
 
 	/**

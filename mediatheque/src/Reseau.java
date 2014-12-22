@@ -6,19 +6,11 @@ import java.util.*;
  */
 public class Reseau {
 
-	/**
-	 * 
-	 */
-	public Reseau() {
-	}
-
-
-
-	/**
-	 * 
-	 */
-	public void ajouterMediatheque() {
-		// TODO implement here
+	protected static Fabrique fabrique;
+	
+	public static void main(String[] args){
+		
+		Mediatheque media1 = new Mediatheque("Novel","3 rue de Novel 74000 Annecy",fabrique);
 	}
 
 }

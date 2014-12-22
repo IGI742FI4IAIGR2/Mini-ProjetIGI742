@@ -22,12 +22,10 @@ public class Fabrique {
 		Produit produit = new Ouvrage(titre,dateSortie,resume,editeur,codeISBN,type);
 		return produit;
 	}
-
-	/**
-	 * 
-	 */
-	public void creerMediatheque() {
-		// TODO implement here
+	
+	public ExemplaireDVD creerExemplaire(Produit produit){
+		ExemplaireDVD exemplaire = new ExemplaireDVD(produit);
+		return exemplaire;
 	}
 
 	/**
