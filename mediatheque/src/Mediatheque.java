@@ -105,25 +105,15 @@ public class Mediatheque implements MediathequeObservatrice {
 	}
 
 	/**
-	 * Rappatrier un exemplaire de DVD rendu dans une autre médiathèque
+	 * Rappatrier un exemplaire rendu dans une autre médiathèque
 	 * @author mikael
-	 * @param ExemplaireDVD ex
+	 * @param Exemplaire ex
 	 */
-	public void verifierEmplacement(ExemplaireDVD ex) {
+	public void verifierEmplacement(Exemplaire ex) {
 		if(ex.getEmplacement()!=ex.getMaMediatheque()){
 			rapatrierExemplaire(ex);
 		}
 		ex.supprimerObservateurEmplacement(this);
 	}
-	/**
-	 * Rappatrier un exemplaire rendu de Livre dans une autre médiathèque
-	 * @author mikael
-	 * @param ExemplaireLivre ex
-	 */
-	public void verifierEmplacement(ExemplaireLivre ex) {
-		if(ex.getEmplacement()!=ex.getMaMediatheque()){
-			rapatrierExemplaire(ex);
-		}
-		ex.supprimerObservateurEmplacement(this);
-	}
+	
 }

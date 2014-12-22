@@ -16,40 +16,22 @@ public class Exemplaire implements SujetEmplacement {
 	 * 
 	 */
 	public String codeExemplaire;
-
-	/**
-	 * 
-	 */
 	public EtatExemplaire etat;
-
-	/**
-	 * 
-	 */
 	public Boolean disponibilite;
-
-	/**
-	 * 
-	 */
 	public String emplacement;
-
-	/**
-	 * 
-	 */
 	public Mediatheque maMediatheque;
-
-	/**
-	 * 
-	 */
 	public ArrayList <MediathequeObservatrice>listeObservateurEmplacement;
+	
+	
 
 	@Override
-	public void ajouterObservateurEmplacement() {
+	public void ajouterObservateurEmplacement(Mediatheque mediatheque) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void supprimerObservateurEmplacement() {
+	public void supprimerObservateurEmplacement(Mediatheque mediatheque) {
 		// TODO Auto-generated method stub
 		
 	}

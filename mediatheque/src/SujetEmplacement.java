@@ -9,12 +9,12 @@ public interface SujetEmplacement {
 	/**
 	 * 
 	 */
-	public void ajouterObservateurEmplacement();
+	public void ajouterObservateurEmplacement(Mediatheque mediatheque);
 
 	/**
 	 * 
 	 */
-	public void supprimerObservateurEmplacement();
+	public void supprimerObservateurEmplacement(Mediatheque mediatheque);
 
 	/**
 	 * 
