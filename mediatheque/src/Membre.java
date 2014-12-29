@@ -15,27 +15,27 @@ public class Membre extends Visiteur implements MembreObservateur {
 	/**
 	 * 
 	 */
-	public void idMembre;
+	public String idMembre;
 
 	/**
 	 * 
 	 */
-	public void adresse;
+	public String adresse;
 
 	/**
 	 * 
 	 */
-	public void numtelephone;
+	public String numtelephone;
 
 	/**
 	 * 
 	 */
-	public void nombre;
+	public int nombre;
 
 	/**
 	 * 
 	 */
-	public void dateNaissance;
+	public String dateNaissance;
 
 
 
