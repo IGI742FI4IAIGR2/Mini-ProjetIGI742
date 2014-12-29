@@ -61,4 +61,10 @@ public class Membre extends Visiteur implements MembreObservateur {
 		// TODO implement here
 	}
 
+	@Override
+	public void verifierDisponibilite() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
