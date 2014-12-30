@@ -58,8 +58,11 @@ public class Employe extends Membre {
 	 * @param Membre mMembre
 	 */
 	public void supprimerMembre(Membre mMembre) {
-		mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);
-		// TODO implement here
+		if (mMembre.getMonAbonnement().getTypeAbonnement() == TypeAbonnement.PlusAbonne){
+			System.out.println("Le membre que vous souhaitez supprimer à déjà été supprimé !");
+		}else{
+			mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);
+		}
 	}
 
 	/**
