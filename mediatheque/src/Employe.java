@@ -27,11 +27,16 @@ public class Employe extends Membre {
 		this.idEmploye = idEmploye;
 	}
 	
-	/**
-	 * 
+	/**@author Jérôme & Nathan
+	 * @param
 	 */
-	public void modifierEtatProduit() {
-		// TODO implement here
+	public void modifierEtatProduit(Exemplaire mExemplaire, EtatExemplaire mEtat) {
+		if(mExemplaire.getEtat() != mEtat){
+		mExemplaire.setEtat(mEtat);
+		}
+		else{
+			System.out.println("L'exemplaire est deja dans cette etat");
+		}
 	}
 
 	/**
