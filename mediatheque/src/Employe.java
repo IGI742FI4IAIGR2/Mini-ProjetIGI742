@@ -9,15 +9,24 @@ public class Employe extends Membre {
 	/**
 	 * 
 	 */
-	public Employe() {
-	}
-
+	private int idEmploye;
+	
 	/**
 	 * 
 	 */
-	public int idEmploye;
+	public Employe(int idEmploye) {
+		this.idEmploye=idEmploye;
+	}
 
+	// Getters & Setters
+	public int getIdEmploye() {
+		return idEmploye;
+	}
 
+	public void setIdEmploye(int idEmploye) {
+		this.idEmploye = idEmploye;
+	}
+	
 	/**
 	 * 
 	 */
@@ -58,10 +67,14 @@ public class Employe extends Membre {
 	 * @param Membre mMembre
 	 */
 	public void supprimerMembre(Membre mMembre) {
-		if (mMembre.getMonAbonnement().getTypeAbonnement() == TypeAbonnement.PlusAbonne){
-			System.out.println("Le membre que vous souhaitez supprimer à déjà été supprimé !");
+		if (this.getMaMediateque() == mMembre.getMaMediateque()){
+			if (mMembre.getMonAbonnement().getTypeAbonnement() == TypeAbonnement.PlusAbonne){
+				System.out.println("Le membre que vous souhaitez supprimer à déjà été supprimé !");
+			}else{
+				mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);
+			}
 		}else{
-			mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);
+			System.out.println("Vous tentez de supprimer un membre appartenant à une médiathèque différente de la votre !");
 		}
 	}
 
@@ -75,7 +88,7 @@ public class Employe extends Membre {
 				maMediatheque.getListeMembre().add(mMembre);
 			}
 		}else{
-			System.out.println("Vous tentez de supprimer un membre d'une médiathèque différente de la votre !");
+			System.out.println("Vous tentez d'ajouter un membre dans une médiathèque différente de la votre !");
 		}
 	}
 
@@ -92,5 +105,6 @@ public class Employe extends Membre {
 	public void attribuerCarte() {
 		// TODO implement here
 	}
+
 
 }
