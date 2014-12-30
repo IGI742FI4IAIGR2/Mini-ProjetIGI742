@@ -65,12 +65,18 @@ public class Employe extends Membre {
 		}
 	}
 
-	/**
-	 * 
+	/** ajout d'un membre à la médiathèque
+	 * @author Jérôme & Nathan
+	 * @param Membre mMembre
 	 */
-	public Membre ajouterMembre() {
-		return null;
-		// TODO implement here
+	public void ajouterMembre(Membre mMembre) {
+		if (this.getMaMediateque() == mMembre.getMaMediateque()){
+			if (!maMediatheque.getListeMembre().contains(mMembre)){
+				maMediatheque.getListeMembre().add(mMembre);
+			}
+		}else{
+			System.out.println("Vous tentez de supprimer un membre d'une médiathèque différente de la votre !");
+		}
 	}
 
 	/**
