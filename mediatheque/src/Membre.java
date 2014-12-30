@@ -20,27 +20,27 @@ public class Membre extends Visiteur implements MembreObservateur {
 	/**
 	 * 
 	 */
-	public String idMembre;
+	private String idMembre;
 
 	/**
 	 * 
 	 */
-	public String adresse;
+	private String adresse;
 
 	/**
 	 * 
 	 */
-	public String numtelephone;
+	private String numtelephone;
 
 	/**
 	 * 
 	 */
-	public int nombre;
+	private int nombre;
 
 	/**
 	 * 
 	 */
-	public String dateNaissance;
+	private String dateNaissance;
 	
 	/**
 	 * 
@@ -82,12 +82,62 @@ public class Membre extends Visiteur implements MembreObservateur {
 		
 	}
 
+	// Getters & Setters
+	
 	public Abonnement getMonAbonnement() {
 		return monAbonnement;
 	}
 
 	public void setMonAbonnement(Abonnement monAbonnement) {
 		this.monAbonnement = monAbonnement;
+	}
+
+	public String getIdMembre() {
+		return idMembre;
+	}
+
+	public void setIdMembre(String idMembre) {
+		this.idMembre = idMembre;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public String getNumtelephone() {
+		return numtelephone;
+	}
+
+	public void setNumtelephone(String numtelephone) {
+		this.numtelephone = numtelephone;
+	}
+
+	public int getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(int nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDateNaissance() {
+		return dateNaissance;
+	}
+
+	public void setDateNaissance(String dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
+	public Mediatheque getMaMediateque() {
+		return maMediateque;
+	}
+
+	public void setMaMediateque(Mediatheque maMediateque) {
+		this.maMediateque = maMediateque;
 	}
 	
 	
