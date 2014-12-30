@@ -32,10 +32,11 @@ public class Employe extends Membre {
 		// TODO implement here
 	}
 
-	/**
+	/**@author Jérôme & Nathan
 	 * 
 	 */
-	public void renouvellerAbonnement() {
+	public void renouvellerAbonnement(Membre mMembre, DureeAbonnement nnouvelleDuree){
+		//mMembre.
 		// TODO implement here
 	}
 
@@ -53,10 +54,11 @@ public class Employe extends Membre {
 		// TODO implement here
 	}
 
-	/**
-	 * 
+	/**@author Jérôme & Nathan
+	 * @param Membre mMembre
 	 */
-	public void supprimerMembre() {
+	public void supprimerMembre(Membre mMembre) {
+		mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);;
 		// TODO implement here
 	}
 
