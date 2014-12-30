@@ -1,3 +1,7 @@
+/**
+ * 
+ * @author jérôme & nathan
+ */
 
 public class Personne {
 	
@@ -31,4 +35,10 @@ public class Personne {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	
+	// Méthodes
+	public String toString() {
+		return "nom: " + this.nom + "prénom: " + this.prenom;
+	}
+	
 }
