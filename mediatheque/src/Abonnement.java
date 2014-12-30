@@ -20,7 +20,7 @@ public class Abonnement {
 	/**
 	 * 
 	 */
-	public Date dateDebut;
+	public GregorianCalendar dateDebut;
 
 	/**
 	 * 
@@ -42,11 +42,11 @@ public class Abonnement {
 		this.idAbonnement = idAbonnement;
 	}
 
-	public Date getDateDebut() {
+	public GregorianCalendar getDateDebut() {
 		return dateDebut;
 	}
 
-	public void setDateDebut(Date dateDebut) {
+	public void setDateDebut(GregorianCalendar dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 

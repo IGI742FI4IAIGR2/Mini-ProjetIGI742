@@ -42,18 +42,18 @@ public class Employe extends Membre {
 	}
 
 	/**@author Jérôme & Nathan
-	 * 
+	 * @param
 	 */
-	public void renouvellerAbonnement(Membre mMembre, DureeAbonnement nnouvelleDuree){
-		//mMembre.
-		// TODO implement here
+	public void renouvellerAbonnement(Membre mMembre, DureeAbonnement nouvelleDuree, GregorianCalendar dateDebut){
+		mMembre.getMonAbonnement().setDureeAbonnement(nouvelleDuree);
+		mMembre.getMonAbonnement().setDateDebut(dateDebut);
 	}
 
-	/**
-	 * 
+	/**@author Jérôme & Nathan
+	 * @param
 	 */
-	public void supprimerAbonnement() {
-		// TODO implement here
+	public void supprimerAbonnement(Membre mMembre) {
+		mMembre.getMonAbonnement().setDureeAbonnement(DureeAbonnement.expire);
 	}
 
 	/**

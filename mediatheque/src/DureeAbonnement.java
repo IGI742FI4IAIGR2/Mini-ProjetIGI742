@@ -4,5 +4,6 @@ public enum DureeAbonnement {
 	troisMois,
 	sixMois,
 	douzeMois,
-	employe
+	employe,
+	expire
 }
