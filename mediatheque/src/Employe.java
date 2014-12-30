@@ -58,7 +58,7 @@ public class Employe extends Membre {
 	 * @param Membre mMembre
 	 */
 	public void supprimerMembre(Membre mMembre) {
-		mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);;
+		mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);
 		// TODO implement here
 	}
 

@@ -41,6 +41,8 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 * 
 	 */
 	public String dateNaissance;
+	
+	private Abonnement monAbonnement;
 
 
 
@@ -71,5 +73,15 @@ public class Membre extends Visiteur implements MembreObservateur {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public Abonnement getMonAbonnement() {
+		return monAbonnement;
+	}
+
+	public void setMonAbonnement(Abonnement monAbonnement) {
+		this.monAbonnement = monAbonnement;
+	}
+	
+	
 
 }
