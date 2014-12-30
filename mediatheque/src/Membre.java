@@ -12,6 +12,11 @@ public class Membre extends Visiteur implements MembreObservateur {
 	public Membre() {
 	}
 
+	public Membre(String nom, String prenom, String adresse2,
+			String numTelephone2, Date dateNaissance2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 */
