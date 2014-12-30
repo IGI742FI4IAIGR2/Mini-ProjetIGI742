@@ -56,6 +56,11 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 * 
 	 */
 	private ArrayList<Emprunt> listeEmprunts;
+	
+	/**
+	 * 
+	 */
+	private String mdp;
 
 
 
@@ -66,11 +71,18 @@ public class Membre extends Visiteur implements MembreObservateur {
 		// TODO implement here
 	}
 
-	/**
-	 * 
+	/**@author Jérôme & Nathan
+	 * @param idMembre
+	 * @param mdp
 	 */
-	public void identification() {
-		// TODO implement here
+	public boolean identification(String idMembre, String mdp) {
+		if(this.idMembre == idMembre && this.mdp == mdp){
+			System.out.println("Vous vous êtes correctement identifié! ");
+			return true;
+		}else{
+			System.out.println("Identification impossible! ");
+			return false;
+		}
 	}
 
 	/**
