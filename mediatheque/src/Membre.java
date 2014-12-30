@@ -51,7 +51,11 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 * 
 	 */
 	private Mediatheque maMediateque;
-
+	
+	/**
+	 * 
+	 */
+	private ArrayList<Emprunt> listeEmprunts;
 
 
 
@@ -138,6 +142,14 @@ public class Membre extends Visiteur implements MembreObservateur {
 
 	public void setMaMediateque(Mediatheque maMediateque) {
 		this.maMediateque = maMediateque;
+	}
+
+	public ArrayList<Emprunt> getListeEmprunts() {
+		return listeEmprunts;
+	}
+
+	public void setListeEmprunts(ArrayList<Emprunt> listeEmprunts) {
+		this.listeEmprunts = listeEmprunts;
 	}
 	
 	

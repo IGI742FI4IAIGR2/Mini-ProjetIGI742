@@ -54,7 +54,7 @@ public class Mediatheque implements MediathequeObservatrice {
 		ArrayList<Exemplaire> listeExemplaires=produit.getListeExemplaires();
 		Exemplaire ex=null;
 		boolean empruntPossible=false;
-		if(size(membre.getListeEmprunts)<5){
+		if(membre.getListeEmprunts().size()<5){
 			empruntPossible=true;
 		}
 		else{
