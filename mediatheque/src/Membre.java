@@ -42,7 +42,15 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 */
 	public String dateNaissance;
 	
+	/**
+	 * 
+	 */
 	private Abonnement monAbonnement;
+	
+	/**
+	 * 
+	 */
+	private Mediatheque maMediateque;
 
 
 
