@@ -9,7 +9,7 @@ public interface MediathequeObservatrice {
 
 	/**
 	 * @author mikael
-	 * @param ExemplaireDVD
+	 * @param Exemplaire
 	 */
 	public void verifierEmplacement(Exemplaire ex);
 	
