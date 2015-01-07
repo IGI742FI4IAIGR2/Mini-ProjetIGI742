@@ -13,11 +13,16 @@ public class EmployeTest extends TestCase {
 		fail("Not yet implemented");
 	}
 	
-	public void testModifierEtatProduit() {
+	/**
+	 * test de la modification de l'état d'un exemplaire
+	 * @author mikael
+	 * @param Produit
+	 */
+	public void testModifierEtatExemplaire() {
 		Produit p = new Produit();
 		Exemplaire ex = new Exemplaire(p);
 		ex.setEtat(EtatExemplaire.Mauvais);
-		employe.modifierEtatProduit(ex, EtatExemplaire.Bon);
+		employe.modifierEtatExemplaire(ex, EtatExemplaire.Bon);
 		if (!EtatExemplaire.Bon.equals(ex.getEtat())){
 			fail("Erreur");
 		}
