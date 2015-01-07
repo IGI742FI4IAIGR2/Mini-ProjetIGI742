@@ -20,6 +20,44 @@ public class Mediatheque implements MediathequeObservatrice {
 	private String adresse;
 	Fabrique fabrique;
 	/**
+	 * 
+	 */
+	private ArrayList<Produit> listeProduit;
+	/**
+	 * 
+	 */
+	private ArrayList<Membre> listeMembre;
+	
+	/**
+	 * @author nathan
+	 * Getter listeProduit
+	 */
+	public ArrayList<Produit> getListeProduit() {
+		return listeProduit;
+	}
+	/**
+	 * @author nathan
+	 * Setter listeProduit
+	 */
+	public void setListeProduit(ArrayList<Produit> listeProduit) {
+		this.listeProduit = listeProduit;
+	}
+	/**
+	 * @author nathan
+	 * Getter listeMembre
+	 */
+	public ArrayList<Membre> getListeMembre() {
+		return listeMembre;
+	}
+	/**
+	 * @author nathan
+	 * Setter listeMembre
+	 */
+	public void setListeMembre(ArrayList<Membre> listeMembre) {
+		this.listeMembre = listeMembre;
+	}
+	
+	/**
 	 * @author mikael
 	 * Getter nom
 	 */
@@ -97,5 +135,4 @@ public class Mediatheque implements MediathequeObservatrice {
 		}
 		ex.supprimerObservateurEmplacement(this);
 	}
-	
 }
