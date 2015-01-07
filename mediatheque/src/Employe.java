@@ -27,10 +27,10 @@ public class Employe extends Membre {
 		this.idEmploye = idEmploye;
 	}
 	
-	/**@author Jérôme & Nathan
+	/**@author Jï¿½rï¿½me & Nathan
 	 * @param
 	 */
-	public void modifierEtatProduit(Exemplaire mExemplaire, EtatExemplaire mEtat) {
+	public void modifierEtatExemplaire(Exemplaire mExemplaire, EtatExemplaire mEtat) {
 		if(mExemplaire.getEtat() != mEtat){
 		mExemplaire.setEtat(mEtat);
 		}
@@ -46,7 +46,7 @@ public class Employe extends Membre {
 		// TODO implement here
 	}
 
-	/**@author Jérôme & Nathan
+	/**@author Jï¿½rï¿½me & Nathan
 	 * @param
 	 */
 	public void renouvellerAbonnement(Membre mMembre, DureeAbonnement nouvelleDuree, GregorianCalendar dateDebut){
@@ -54,7 +54,7 @@ public class Employe extends Membre {
 		mMembre.getMonAbonnement().setDateDebut(dateDebut);
 	}
 
-	/**@author Jérôme & Nathan
+	/**@author Jï¿½rï¿½me & Nathan
 	 * @param
 	 */
 	public void supprimerAbonnement(Membre mMembre) {
@@ -68,23 +68,23 @@ public class Employe extends Membre {
 		// TODO implement here
 	}
 
-	/**@author Jérôme & Nathan
+	/**@author Jï¿½rï¿½me & Nathan
 	 * @param Membre mMembre
 	 */
 	public void supprimerMembre(Membre mMembre) {
 		if (this.getMaMediateque() == mMembre.getMaMediateque()){
 			if (mMembre.getMonAbonnement().getTypeAbonnement() == TypeAbonnement.PlusAbonne){
-				System.out.println("Le membre que vous souhaitez supprimer à déjà été supprimé !");
+				System.out.println("Le membre que vous souhaitez supprimer ï¿½ dï¿½jï¿½ ï¿½tï¿½ supprimï¿½ !");
 			}else{
 				mMembre.getMonAbonnement().setTypeAbonnement(TypeAbonnement.PlusAbonne);
 			}
 		}else{
-			System.out.println("Vous tentez de supprimer un membre appartenant à une médiathèque différente de la votre !");
+			System.out.println("Vous tentez de supprimer un membre appartenant ï¿½ une mï¿½diathï¿½que diffï¿½rente de la votre !");
 		}
 	}
 
-	/** ajout d'un membre à la médiathèque
-	 * @author Jérôme & Nathan
+	/** ajout d'un membre ï¿½ la mï¿½diathï¿½que
+	 * @author Jï¿½rï¿½me & Nathan
 	 * @param Membre mMembre
 	 */
 	public void ajouterMembre(Membre mMembre) {
@@ -93,7 +93,7 @@ public class Employe extends Membre {
 				maMediatheque.getListeMembre().add(mMembre);
 			}
 		}else{
-			System.out.println("Vous tentez d'ajouter un membre dans une médiathèque différente de la votre !");
+			System.out.println("Vous tentez d'ajouter un membre dans une mï¿½diathï¿½que diffï¿½rente de la votre !");
 		}
 	}
 
