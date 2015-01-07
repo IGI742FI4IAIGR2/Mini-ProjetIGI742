@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Ouvrage extends Produit {
 
-	//Dï¿½claration des variables
+	//Déclaration des variables
 		public String 			codeISBN;
 		public TypeOuvrage 		type;
 		
