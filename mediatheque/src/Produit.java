@@ -57,20 +57,23 @@ public class Produit implements SujetDisponibilite {
 
 	@Override
 	public void ajouterObservateurDispo(Membre membre) {
-		// TODO Auto-generated method stub
+		this.listeObservateurDisponibilite.add(membre);
 		
 	}
 
 	@Override
 	public void supprimerObservateurDispo(Membre membre) {
-		// TODO Auto-generated method stub
-		
+		this.listeObservateurDisponibilite.remove(membre);
 	}
 
 	@Override
 	public void notifierObservateurDispo() {
-		// TODO Auto-generated method stub
+		this.getListeObservateurDisponibilite().get(0).verifierDisponibilite(this);
 		
+	}
+
+	public ArrayList<Membre> getListeObservateurDisponibilite() {
+		return listeObservateurDisponibilite;
 	}
 
 

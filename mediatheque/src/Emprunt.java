@@ -40,11 +40,14 @@ public class Emprunt {
 		this.dateRetour=new GregorianCalendar();
 	}
 
-	/**
+	/**@author jerome
 	 * Restitution d'un exemplaire
 	 */
-	public void restituer() {
-		// TODO implement here
+	public void restituer(Exemplaire unExemplaire) {
+		unExemplaire.setDisponibilite(true);
+		if (unExemplaire.getMonProduit().getListeObservateurDisponibilite().size() > 0){
+			unExemplaire.getMonProduit().notifierObservateurDispo();
+		}
 	}
 	
 	/**

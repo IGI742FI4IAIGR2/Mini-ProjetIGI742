@@ -9,6 +9,6 @@ public interface MembreObservateur {
 	/**
 	 * 
 	 */
-	public void verifierDisponibilite();
+	public void verifierDisponibilite(Produit ceProduit); 
 
 }

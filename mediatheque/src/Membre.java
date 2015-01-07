@@ -6,64 +6,23 @@ import java.util.*;
  */
 public class Membre extends Visiteur implements MembreObservateur {
 
-	/**
-	 * 
-	 */
+	private String idMembre;
+	private String adresse;
+	private String numtelephone;
+	private int nombre;
+	private String dateNaissance;
+	private Abonnement monAbonnement;
+	private Mediatheque maMediateque;
+	private ArrayList<Emprunt> listeEmprunts;
+	private String mdp;
+	
 	public Membre() {
 	}
 
 	public Membre(String nom, String prenom, String adresse2,
 			String numTelephone2, Date dateNaissance2) {
-		// TODO Auto-generated constructor stub
 	}
-
-	/**
-	 * 
-	 */
-	private String idMembre;
-
-	/**
-	 * 
-	 */
-	private String adresse;
-
-	/**
-	 * 
-	 */
-	private String numtelephone;
-
-	/**
-	 * 
-	 */
-	private int nombre;
-
-	/**
-	 * 
-	 */
-	private String dateNaissance;
 	
-	/**
-	 * 
-	 */
-	private Abonnement monAbonnement;
-	
-	/**
-	 * 
-	 */
-	private Mediatheque maMediateque;
-	
-	/**
-	 * 
-	 */
-	private ArrayList<Emprunt> listeEmprunts;
-	
-	/**
-	 * 
-	 */
-	private String mdp;
-
-
-
 	/**
 	 * 
 	 */
@@ -71,13 +30,13 @@ public class Membre extends Visiteur implements MembreObservateur {
 		// TODO implement here
 	}
 
-	/**@author Jérôme & Nathan
+	/**@author Jï¿½rï¿½me & Nathan
 	 * @param idMembre
 	 * @param mdp
 	 */
 	public boolean identification(String idMembre, String mdp) {
 		if(this.idMembre == idMembre && this.mdp == mdp){
-			System.out.println("Vous vous êtes correctement identifié! ");
+			System.out.println("Vous vous ï¿½tes correctement identifiï¿½! ");
 			return true;
 		}else{
 			System.out.println("Identification impossible! ");
@@ -85,16 +44,16 @@ public class Membre extends Visiteur implements MembreObservateur {
 		}
 	}
 
-	/**
-	 * 
+	/**@author Jerome
+	 *@param
 	 */
-	public void demandeEmprunt() {
-		// TODO implement here
+	public void demandeEmprunt(Produit mProduit) {
+		this.maMediateque.emprunterProduit(mProduit, this);
 	}
 
 	@Override
-	public void verifierDisponibilite() {
-		// TODO Auto-generated method stub
+	public void verifierDisponibilite(Produit ceProduit) {
+		demandeEmprunt(ceProduit);
 		
 	}
 

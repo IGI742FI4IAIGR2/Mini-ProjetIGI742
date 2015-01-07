@@ -6,22 +6,25 @@ import java.util.*;
  */
 public class Exemplaire implements SujetEmplacement {
 
-	/**
-	 * 
-	 */
-	public Exemplaire(Produit produit) {
-	}
-
-	/**
-	 * 
-	 */
 	private String codeExemplaire;
 	private EtatExemplaire etat;
 	private Boolean disponibilite;
 	private Mediatheque emplacement;
 	private Mediatheque maMediatheque;
+	private Produit monProduit;
 	private ArrayList <MediathequeObservatrice>listeObservateurEmplacement;
 	
+	public Exemplaire(Produit produit) {
+		this.monProduit = produit;
+		
+	}
+
+	public Produit getMonProduit() {
+		return monProduit;
+	}
+	public void setMonProduit(Produit monProduit) {
+		this.monProduit = monProduit;
+	}
 	public String getCodeExemplaire(){
 		return this.codeExemplaire;
 	}
@@ -52,22 +55,18 @@ public class Exemplaire implements SujetEmplacement {
 
 	@Override
 	public void ajouterObservateurEmplacement(Mediatheque mediatheque) {
-		// TODO Auto-generated method stub
+		this.listeObservateurEmplacement.add(mediatheque);
 		
 	}
 
 	@Override
 	public void supprimerObservateurEmplacement(Mediatheque mediatheque) {
-		// TODO Auto-generated method stub
+		this.listeObservateurEmplacement.remove(mediatheque);
 		
 	}
 
 	@Override
-	public void notifierObservateurEmplacement() {
-		// TODO Auto-generated method stub
-		
+	public String notifierObservateurEmplacement() {
+		return emplacement.getNom();
 	}
-
-
-
 }
