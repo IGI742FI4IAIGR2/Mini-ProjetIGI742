@@ -48,7 +48,12 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 *@param
 	 */
 	public void demandeEmprunt(Produit mProduit) {
-		this.maMediateque.emprunterProduit(mProduit, this);
+		if(this.monAbonnement.dureeAbonnement != DureeAbonnement.expire){
+			this.maMediateque.emprunterProduit(mProduit, this);
+		}
+		else{
+			System.out.println("Vous n etes plus abonnee");
+		}
 	}
 
 	@Override
