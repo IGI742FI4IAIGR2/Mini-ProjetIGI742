@@ -66,6 +66,10 @@ public class Membre extends Visiteur implements MembreObservateur {
 		this.monAbonnement = monAbonnement;
 	}
 
+	public String setmdp(){
+		return mdp;
+	}
+	
 	public String getIdMembre() {
 		return idMembre;
 	}
@@ -121,7 +125,4 @@ public class Membre extends Visiteur implements MembreObservateur {
 	public void setListeEmprunts(ArrayList<Emprunt> listeEmprunts) {
 		this.listeEmprunts = listeEmprunts;
 	}
-	
-	
-
 }
