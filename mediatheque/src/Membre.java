@@ -20,6 +20,11 @@ public class Membre extends Visiteur implements MembreObservateur {
 
 	public Membre(String nom, String prenom, String adresse2,
 			String numTelephone2, String dateNaissance2) {
+		this.setNom(nom);
+		this.setPrenom(prenom);
+		this.adresse = adresse2;
+		this.numtelephone = numTelephone2;
+		this.dateNaissance = dateNaissance2;
 	}
 	
 	/**
@@ -29,7 +34,7 @@ public class Membre extends Visiteur implements MembreObservateur {
 		// TODO implement here
 	}
 
-	/**@author J���r���me & Nathan
+	/**@author Jerome & Nathan
 	 * @param idMembre
 	 * @param mdp
 	 */
