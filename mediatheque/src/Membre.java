@@ -19,7 +19,7 @@ public class Membre extends Visiteur implements MembreObservateur {
 	}
 
 	public Membre(String nom, String prenom, String adresse2,
-			String numTelephone2, Date dateNaissance2) {
+			String numTelephone2, String dateNaissance2) {
 	}
 	
 	/**
@@ -29,13 +29,13 @@ public class Membre extends Visiteur implements MembreObservateur {
 		// TODO implement here
 	}
 
-	/**@author J�r�me & Nathan
+	/**@author J���r���me & Nathan
 	 * @param idMembre
 	 * @param mdp
 	 */
 	public boolean identification(String idMembre, String mdp) {
 		if(this.idMembre == idMembre && this.mdp == mdp){
-			System.out.println("Vous vous �tes correctement identifi�! ");
+			System.out.println("Vous vous ���tes correctement identifi���! ");
 			return true;
 		}else{
 			System.out.println("Identification impossible! ");

@@ -31,7 +31,7 @@ public class Fabrique {
 	/**
 	 * 
 	 */
-	public Membre creerMembre(String nom, String prenom, String adresse, String numTelephone, Date dateNaissance) {
+	public Membre creerMembre(String nom, String prenom, String adresse, String numTelephone, String dateNaissance) {
 		Membre membre = new Membre(nom, prenom, adresse, numTelephone, dateNaissance);
 		return membre;
 	}
