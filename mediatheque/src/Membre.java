@@ -20,7 +20,12 @@ public class Membre extends Visiteur implements MembreObservateur {
 	}
 
 	public Membre(String nom, String prenom, String adresse2,
-			String numTelephone2, Date dateNaissance2) {
+			String numTelephone2, String dateNaissance2) {
+		super.setNom(nom);
+		super.setPrenom(prenom);
+		this.adresse = adresse2;
+		this.numtelephone = numTelephone2;
+		this.dateNaissance = dateNaissance2;
 	}
 	
 	/**
