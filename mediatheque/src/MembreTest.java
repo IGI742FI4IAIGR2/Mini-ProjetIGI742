@@ -31,9 +31,7 @@ public class MembreTest extends TestCase {
 		// TODO Auto-generated method stub
 		
 	}
-
 	public void testVerifierDisponibilite() {
 		fail("Not yet implemented");
 	}
-
 }
