@@ -35,6 +35,10 @@ public class Fabrique {
 		Membre membre = new Membre(nom, prenom, adresse, numTelephone, dateNaissance);
 		return membre;
 	}
+	public Employe creerEmploye(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
+		Employe employe = new Employe(nom, prenom, adresse, numTelephone, dateNaissance);
+		return employe;
+	}
 
 	/**
 	 * 

@@ -52,7 +52,12 @@ public class Mediatheque implements MediathequeObservatrice {
 	public void setListeMembre(ArrayList<Membre> listeMembre) {
 		this.listeMembre = listeMembre;
 	}
-	
+	/**
+	 * @author mikael
+	 */
+	public ArrayList<Employe> getListeEmploye(){
+		return listeEmploye;
+	}
 	/**
 	 * @author mikael
 	 * Getter nom
@@ -137,20 +142,24 @@ public class Mediatheque implements MediathequeObservatrice {
 	 */
 	public Membre creerMembre(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
 		Membre membre = fabrique.creerMembre(nom, prenom, adresse, numTelephone, dateNaissance);
-		this.getListeMembre().add(membre);
-		membre.setIdMembre(listeMembre.indexOf(membre));
+		int idMembre = this.getListeMembre().get(this.getListeMembre().size()-1).getIdMembre()+1;
+		membre.setIdMembre(idMembre);
 		membre.setMaMediateque(this);
+		this.getListeMembre().add(membre);
 		return membre;
 	}
 	/**
 	 * @author mikael
 	 * 
 	 */
-	public void creerEmploye(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
-		Membre membre = fabrique.creerMembre(nom, prenom, adresse, numTelephone, dateNaissance);
-		this.getListeMembre().add(membre);
-		membre.setIdMembre(listeMembre.indexOf(membre));
-		membre.setMaMediateque(this);
+	public Employe creerEmploye(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
+		Employe employe = fabrique.creerEmploye(nom, prenom, adresse, numTelephone, dateNaissance);
+		int idEmploye = this.getListeEmploye().get(this.getListeEmploye().size()-1).getIdEmploye()+1;
+		employe.setIdMembre(idEmploye);
+		employe.setMaMediateque(this);
+		employe.setMonAbonnement(new Abonnement());
+		this.getListeEmploye().add(employe);
+		return employe;
 	}
 	
 }

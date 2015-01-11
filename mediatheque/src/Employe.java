@@ -14,6 +14,13 @@ public class Employe extends Membre {
 	/**
 	 * 
 	 */
+	public Employe(String nom, String prenom, String adresse2,String numTelephone2, String dateNaissance2) {
+		this.setNom(nom);
+		this.setPrenom(prenom);
+		this.setAdresse(adresse2);
+		this.setNumtelephone(numTelephone2);
+		this.setDateNaissance(dateNaissance2);
+	}
 	public Employe(int idEmploye) {
 		this.idEmploye=idEmploye;
 	}
