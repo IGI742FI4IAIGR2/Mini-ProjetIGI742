@@ -19,14 +19,10 @@ public class Mediatheque implements MediathequeObservatrice {
 	private String nom;
 	private String adresse;
 	Fabrique fabrique;
-	/**
-	 * 
-	 */
+
 	private ArrayList<Produit> listeProduit;
-	/**
-	 * 
-	 */
 	private ArrayList<Membre> listeMembre;
+	private ArrayList<Employe> listeEmploye;
 	
 	/**
 	 * @author nathan
@@ -71,7 +67,6 @@ public class Mediatheque implements MediathequeObservatrice {
 	public String getAdresse(){
 		return this.adresse;
 	}
-
 
 
 	/**
@@ -135,4 +130,32 @@ public class Mediatheque implements MediathequeObservatrice {
 		}
 		ex.supprimerObservateurEmplacement(this);
 	}
+	
+	/**
+	 * @author mikael
+	 * 
+	 */
+	public Membre creerMembre(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
+		Membre membre = fabrique.creerMembre(nom, prenom, adresse, numTelephone, dateNaissance);
+		this.getListeMembre().add(membre);
+		membre.setIdMembre(listeMembre.indexOf(membre));
+		membre.setMaMediateque(this);
+		return membre;
+	}
+	/**
+	 * @author mikael
+	 * 
+	 */
+	public void creerEmploye(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
+		Membre membre = fabrique.creerMembre(nom, prenom, adresse, numTelephone, dateNaissance);
+		this.getListeMembre().add(membre);
+		membre.setIdMembre(listeMembre.indexOf(membre));
+		membre.setMaMediateque(this);
+	}
+	
 }
+
+
+
+
+

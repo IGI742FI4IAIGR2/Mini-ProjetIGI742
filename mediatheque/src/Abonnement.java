@@ -11,26 +11,35 @@ public class Abonnement {
 	 */
 	public Abonnement() {
 	}
+	/**
+	 * @author mikael
+	 * 
+	 */
+	public Abonnement(int id, GregorianCalendar dateDebut, DureeAbonnement duree, TypeAbonnement type){
+		this.idAbonnement=id;
+		this.dateDebut=dateDebut;
+		this.dureeAbonnement=duree;
+		this.typeAbonnement=type;
+	}
+	/**
+	 * 
+	 */
+	private int idAbonnement;
 
 	/**
 	 * 
 	 */
-	public int idAbonnement;
+	private GregorianCalendar dateDebut;
 
 	/**
 	 * 
 	 */
-	public GregorianCalendar dateDebut;
+	private DureeAbonnement dureeAbonnement ;
 
 	/**
 	 * 
 	 */
-	public DureeAbonnement dureeAbonnement ;
-
-	/**
-	 * 
-	 */
-	public TypeAbonnement typeAbonnement;
+	private TypeAbonnement typeAbonnement;
 
 	// Getters & Setters
 	

@@ -85,18 +85,19 @@ public class Employe extends Membre {
 
 	/** ajout d'un membre � la m�diath�que
 	 * @author J�r�me & Nathan
-	 * @param Membre mMembre
+	 * @param 
 	 */
-	public void ajouterMembre(Membre mMembre) {
-		if (this.getMaMediateque() == mMembre.getMaMediateque()){
-			if (!maMediatheque.getListeMembre().contains(mMembre)){
-				maMediatheque.getListeMembre().add(mMembre);
-			}
-		}else{
-			System.out.println("Vous tentez d'ajouter un membre dans une m�diath�que diff�rente de la votre !");
-		}
+	public void ajouterMembre(String nom, String prenom, String adresse, String numTelephone, String dateNaissance, Abonnement abonnement) {
+		Membre membre = this.getMaMediateque().creerMembre(nom, prenom, adresse, numTelephone, dateNaissance);
+		membre.setMonAbonnement(abonnement);
 	}
-
+	/**
+	 * @author mikael
+	 * 
+	 */
+	public void ajouterEmploye(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
+		this.getMaMediateque().creerEmploye(nom, prenom, adresse, numTelephone, dateNaissance);
+	}
 	/**
 	 * 
 	 */

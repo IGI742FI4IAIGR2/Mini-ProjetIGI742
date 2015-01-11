@@ -5,7 +5,7 @@ import java.util.*;
  */
 public class Membre extends Visiteur implements MembreObservateur {
 
-	private String idMembre;
+	private int idMembre;
 	private String adresse;
 	private String numtelephone;
 	private int nombre;
@@ -38,7 +38,7 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 * @param idMembre
 	 * @param mdp
 	 */
-	public boolean identification(String idMembre, String mdp) {
+	public boolean identification(int idMembre, String mdp) {
 		if(this.idMembre == idMembre && this.mdp == mdp){
 			System.out.println("Vous vous ���tes correctement identifi���! ");
 			return true;
@@ -52,7 +52,7 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 *@param
 	 */
 	public void demandeEmprunt(Produit mProduit) {
-		if(this.monAbonnement.dureeAbonnement != DureeAbonnement.expire){
+		if(this.monAbonnement.getDureeAbonnement() != DureeAbonnement.expire){
 			this.maMediateque.emprunterProduit(mProduit, this);
 		}
 		else{
@@ -80,11 +80,11 @@ public class Membre extends Visiteur implements MembreObservateur {
 		return mdp;
 	}
 	
-	public String getIdMembre() {
+	public int getIdMembre() {
 		return idMembre;
 	}
 
-	public void setIdMembre(String idMembre) {
+	public void setIdMembre(int idMembre) {
 		this.idMembre = idMembre;
 	}
 
