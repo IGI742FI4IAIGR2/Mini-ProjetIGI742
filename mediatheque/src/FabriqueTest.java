@@ -28,7 +28,6 @@ public class FabriqueTest extends TestCase {
 	}
 
 	public void testCreerEmprunt() {
-		Emprunt testEmprunt = new Emprunt(null, null);
 		fail("Not yet implemented");
 	}
 
