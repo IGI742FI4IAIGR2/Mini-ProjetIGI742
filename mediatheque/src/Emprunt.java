@@ -43,12 +43,12 @@ public class Emprunt {
 	/**@author jerome
 	 * Restitution d'un exemplaire
 	 */
-	public void restituer(Exemplaire unExemplaire, Mediatheque cetteMediatheque) {
-		unExemplaire.setDisponibilite(true);
-		if (unExemplaire.getMonProduit().getListeObservateurDisponibilite().size() > 0){
-			unExemplaire.getMonProduit().notifierObservateurDispo();
+	public void restituer(Mediatheque cetteMediatheque) {
+		ex.setDisponibilite(true);
+		if (ex.getMonProduit().getListeObservateurDisponibilite().size() > 0){
+			ex.getMonProduit().notifierObservateurDispo();
 		}
-		unExemplaire.setEmplacement(cetteMediatheque);
+		ex.setEmplacement(cetteMediatheque);
 	}
 	
 	/**

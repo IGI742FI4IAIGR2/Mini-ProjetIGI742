@@ -6,18 +6,32 @@ import java.util.*;
  */
 public class Produit implements SujetDisponibilite {
 
-	/**
-	 * 
-	 */
-	public Produit() {
-	}
-
 	private String titre;
 	private Date dateSortie;
 	private String resume;
 	private String editeur;
 	private ArrayList<Exemplaire> listeExemplaires;
 	private ArrayList<Membre> listeObservateurDisponibilite;
+	
+	public Produit() {
+	}
+	
+	@Override
+	public void ajouterObservateurDispo(Membre membre) {
+		this.listeObservateurDisponibilite.add(membre);
+		
+	}
+
+	@Override
+	public void supprimerObservateurDispo(Membre membre) {
+		this.listeObservateurDisponibilite.remove(membre);
+	}
+
+	@Override
+	public void notifierObservateurDispo() {
+		this.listeObservateurDisponibilite.get(0).verifierDisponibilite(this); //On notifie l observateur
+		this.listeObservateurDisponibilite.remove(0);							//On le retire de la liste
+	}
 
 	public String getTitre() {
 		return titre;
@@ -55,27 +69,7 @@ public class Produit implements SujetDisponibilite {
 		return this.listeExemplaires;
 	}
 
-	@Override
-	public void ajouterObservateurDispo(Membre membre) {
-		this.listeObservateurDisponibilite.add(membre);
-		
-	}
-
-	@Override
-	public void supprimerObservateurDispo(Membre membre) {
-		this.listeObservateurDisponibilite.remove(membre);
-	}
-
-	@Override
-	public void notifierObservateurDispo() {
-		this.getListeObservateurDisponibilite().get(0).verifierDisponibilite(this);
-		
-	}
-
 	public ArrayList<Membre> getListeObservateurDisponibilite() {
 		return listeObservateurDisponibilite;
 	}
-
-
-
 }

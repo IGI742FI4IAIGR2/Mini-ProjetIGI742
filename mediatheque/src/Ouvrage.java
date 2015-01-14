@@ -8,8 +8,8 @@ import java.util.*;
 public class Ouvrage extends Produit {
 
 	//D�claration des variables
-		public String 			codeISBN;
-		public TypeOuvrage 		type;
+		private String 			codeISBN;
+		private TypeOuvrage 		type;
 		
 	public Ouvrage() {
 		super();

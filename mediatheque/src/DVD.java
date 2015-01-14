@@ -6,8 +6,8 @@ import java.util.*;
  */
 public class DVD extends Produit {
 
-	public String reference;
-	public GenreFilm genre;
+	private String reference;
+	private GenreFilm genre;
 
 	public DVD() {
 	}

@@ -60,6 +60,40 @@ public class Membre extends Visiteur implements MembreObservateur {
 		}
 	}
 
+	/**@author Jerome
+	 *@param
+	 */
+	public void rendreEmprunt(Mediatheque mMedia, Emprunt mEmprunt) {
+		int index;
+		boolean bRendre = false;
+		
+		if(mMedia == this.maMediateque) //Si mediatheque est celle du membre
+		{
+			bRendre = true;
+		}
+		else //Sinon on verifie le type d abonnement
+		{
+			if(this.monAbonnement.getTypeAbonnement() == TypeAbonnement.LivPass || this.monAbonnement.getTypeAbonnement() == TypeAbonnement.LivDVDPass) //Si abo. Ok
+			{
+				bRendre = true;
+			}
+			else
+			{
+				bRendre = false;
+			}
+		}
+		
+		if(this.listeEmprunts.contains(mEmprunt) && bRendre){ //On verifie si l'emprunt est dans la liste et si on peut restituer
+			index = this.listeEmprunts.lastIndexOf(mEmprunt); //On recupere l index de l emprunt dans la liste
+			this.listeEmprunts.get(index).restituer(mMedia);  //On appel la methode de restituion
+			this.listeEmprunts.remove(index);				  //On retire l emprunt de la liste
+			System.out.println("Retour Ok");
+		}
+		else{
+			System.out.println("Restituion Impossible");
+		}
+	}
+	
 	@Override
 	public void verifierDisponibilite(Produit ceProduit) {
 		demandeEmprunt(ceProduit);

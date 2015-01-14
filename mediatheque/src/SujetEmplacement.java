@@ -1,7 +1,3 @@
-
-import java.util.*;
-
-
 /**
  * @author Marion
  * Interface pour l'évènement "l'emplacement de l'exemplaire a changé"
