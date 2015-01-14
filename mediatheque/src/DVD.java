@@ -14,7 +14,12 @@ public class DVD extends Produit {
 
 	public DVD(String titre, Date dateSortie, String resume, String editeur,
 			String reference2, GenreFilm genre2) {
-		// TODO Auto-generated constructor stub
+		this.setTitre(titre);
+		this.setDateSortie(dateSortie);
+		this.setgenre(genre2);
+		this.setResume(resume);
+		this.setEditeur(editeur);
+		this.setreference(reference2);
 	}
 	
 	//on va donné une référence 

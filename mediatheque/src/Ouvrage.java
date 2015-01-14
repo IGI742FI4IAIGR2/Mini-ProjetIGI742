@@ -18,6 +18,12 @@ public class Ouvrage extends Produit {
 	public Ouvrage(String titre, Date dateSortie, String resume,
 			String editeur, String codeISBN2, TypeOuvrage type2) {
 		super();
+		this.setTitre(titre);
+		this.setDateSortie(dateSortie);
+		this.setResume(resume);
+		this.setCodeISBN(codeISBN2);
+		this.setEditeur(editeur);
+		this.setType(type2);
 	}
 	
 	//Getter et Setter

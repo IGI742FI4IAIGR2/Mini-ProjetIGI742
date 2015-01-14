@@ -27,11 +27,11 @@ public class Membre extends Visiteur implements MembreObservateur {
 		this.dateNaissance = dateNaissance2;
 	}
 	
-	/**
-	 * 
+	/**@author Jerome
+	 * @param
 	 */
-	public void demandeReservation() {
-		// TODO implement here
+	public void demandeReservation(Produit mProduit) {
+		this.maMediateque.reserverProduit(mProduit, this);
 	}
 
 	/**@author Jerome & Nathan
