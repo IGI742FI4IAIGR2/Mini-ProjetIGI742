@@ -163,6 +163,17 @@ public class Mediatheque implements MediathequeObservatrice {
 		this.getListeEmploye().add(employe);
 		return employe;
 	}
+	/**
+	 * @author mikael
+	 */
+	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur, String reference, GenreFilm genre){
+		DVD produit = fabrique.creerProduit(titre, dateSortie, resume, editeur, reference, genre);
+		this.listeProduit.add(produit);
+	}
+	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type){
+		Ouvrage produit = fabrique.creerProduit(titre, dateSortie, resume, editeur, codeISBN, type);
+		this.listeProduit.add(produit);
+	}
 	
 }
 

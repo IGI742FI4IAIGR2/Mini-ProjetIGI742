@@ -52,7 +52,22 @@ public class Employe extends Membre {
 	public void commanderProduit() {
 		// TODO implement here
 	}
-
+	
+	/**
+	 * @author mikael
+	 * DVD
+	 */
+	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur,String reference, GenreFilm genre){
+		this.maMediatheque.ajouterProduit(titre, dateSortie, resume, editeur, reference, genre);	
+	}
+	/**
+	 * @author mikael
+	 * Ouvrage
+	 */
+	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type){
+		this.maMediatheque.ajouterProduit(titre, dateSortie, resume, editeur, codeISBN, type);	
+	}
+	
 	/**@author J�r�me & Nathan
 	 * @param
 	 */

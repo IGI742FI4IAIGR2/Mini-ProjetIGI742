@@ -10,19 +10,18 @@ public class Fabrique {
 	/**
 	 * 
 	 */
-	public Produit creerProduit(String titre, Date dateSortie, String resume, String editeur, String reference, GenreFilm genre) {
-		Produit produit = new DVD(titre,dateSortie,resume,editeur,reference,genre);
-		return produit;
+	public DVD creerProduit(String titre, Date dateSortie, String resume, String editeur, String reference, GenreFilm genre) {
+			DVD produit = new DVD(titre, dateSortie, resume, editeur, reference, genre);
+			return produit;
 	}
+	public Ouvrage creerProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type) {
+		Ouvrage produit = new Ouvrage(titre, dateSortie, resume, editeur, codeISBN, type);
+		return produit;
+}
 	
 	/**
 	 * 
 	 */
-	public Produit creerProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type) {
-		Produit produit = new Ouvrage(titre,dateSortie,resume,editeur,codeISBN,type);
-		return produit;
-	}
-	
 	public Exemplaire creerExemplaire(Produit produit){
 		Exemplaire exemplaire = new Exemplaire(produit);
 		return exemplaire;
