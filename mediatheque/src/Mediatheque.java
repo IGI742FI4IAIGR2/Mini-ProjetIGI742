@@ -94,17 +94,19 @@ public class Mediatheque implements MediathequeObservatrice {
 	 */
 	public Emprunt emprunterProduit(Produit produit, Membre membre) {
 		ArrayList<Exemplaire> listeExemplaires=produit.getListeExemplaires();
-		Exemplaire ex=null;
-		Emprunt emprunt=null;
-		boolean empruntPossible=false;
+		Iterator<Exemplaire> it =listeExemplaires.iterator();
+		boolean empruntDispo = false;
+		Exemplaire ex = null;
+		Emprunt emprunt = null;
+		boolean empruntPossible = false;
+		
 		if(membre.getListeEmprunts().size()<5){
 			empruntPossible=true;
 		}
 		else{
 			System.out.print("Vous avez atteint le quota d'emprunt");
 		}
-		boolean empruntDispo=false;
-		Iterator<Exemplaire> it =listeExemplaires.iterator();
+		
 		while(!empruntDispo | it.hasNext()){
 			ex = it.next();
 			if(ex.getDisponibilite()){

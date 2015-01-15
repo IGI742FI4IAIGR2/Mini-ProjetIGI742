@@ -10,8 +10,8 @@ public class Produit implements SujetDisponibilite {
 	private String dateSortie;
 	private String resume;
 	private String editeur;
-	private ArrayList<Exemplaire> listeExemplaires;
-	private ArrayList<Membre> listeObservateurDisponibilite;
+	private ArrayList<Exemplaire> listeExemplaires = new ArrayList<Exemplaire>();
+	private ArrayList<Membre> listeObservateurDisponibilite = new ArrayList<Membre>();
 	
 	public Produit() {
 	}

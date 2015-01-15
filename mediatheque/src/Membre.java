@@ -12,7 +12,7 @@ public class Membre extends Visiteur implements MembreObservateur {
 	private String dateNaissance;
 	private Abonnement monAbonnement;
 	private Mediatheque maMediateque;
-	private ArrayList<Emprunt> listeEmprunts;
+	private ArrayList<Emprunt> listeEmprunts = new ArrayList<Emprunt>();
 	private String mdp;
 	
 	public Membre() {

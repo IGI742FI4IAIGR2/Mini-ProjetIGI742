@@ -19,9 +19,12 @@ public class Exemplaire implements SujetEmplacement {
 		this.maMediatheque=mediatheque;
 		codeExemplaire=1;
 		int i;
-		for(i=0;i<monProduit.getListeExemplaires().size();i++){
-			if(codeExemplaire<monProduit.getListeExemplaires().get(i).getCodeExemplaire()){
-				codeExemplaire=i+1;
+		this.disponibilite = true;
+		if(monProduit.getListeExemplaires().size() > 0){
+			for(i=0;i<monProduit.getListeExemplaires().size();i++){
+				if(codeExemplaire<monProduit.getListeExemplaires().get(i).getCodeExemplaire()){
+					codeExemplaire=i+1;
+				}
 			}
 		}
 		
