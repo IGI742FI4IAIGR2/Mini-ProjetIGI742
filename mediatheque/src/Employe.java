@@ -65,16 +65,17 @@ public class Employe extends Membre {
 	 * @author mikael
 	 * Ouvrage
 	 */
-	public void ajouterExemplaire(Produit produit,EtatExemplaire etat, Boolean disponibilite){
-			this.getMaMediateque().ajouterExemplaire(produit, etat, disponibilite);
+	public Ouvrage ajouterProduit(String titre, String dateSortie, String resume, String editeur,String reference, TypeOuvrage type, Auteur auteur){
+		Ouvrage produit = this.getMaMediateque().ajouterProduit(titre, dateSortie, resume, editeur, reference, type, auteur);
+		return produit;
 		}
 	
 	/**
 	 * @author mikael
 	 * Exemplaire
 	 */
-	public void ajouterExemplaire(Produit produit){
-		
+	public void ajouterExemplaire(Produit produit,EtatExemplaire etat, Boolean disponibilite){
+		this.getMaMediateque().ajouterExemplaire(produit, etat, disponibilite);
 	}
 	
 	/**@author J�r�me & Nathan
