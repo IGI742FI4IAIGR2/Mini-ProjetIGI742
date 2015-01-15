@@ -116,7 +116,7 @@ public class Mediatheque implements MediathequeObservatrice {
 		if(empruntPossible&&empruntDispo){
 			fabrique.creerEmprunt(ex,membre);
 			ex.ajouterObservateurEmplacement(this);
-			System.out.println("Produit emprunté");
+			System.out.println("Produit emprunté : "+ex.getMonProduit().getTitre()+" exemplaire : "+ex.getCodeExemplaire());
 		}
 		else{
 			System.out.println("Le produit n'est pas disponible, vous pouvez le réserver");
