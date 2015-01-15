@@ -12,8 +12,7 @@ public class FabriqueTest extends TestCase {
 
 	public void testCreerExemplaire() {
 		Produit mProduit = new Produit();
-		Mediatheque media = new Mediatheque();
-		Exemplaire testExemplaire = new Exemplaire(mProduit, media);
+		Exemplaire testExemplaire = new Exemplaire(mProduit);
 		assertSame(mProduit,testExemplaire.getMonProduit());
 	}
 

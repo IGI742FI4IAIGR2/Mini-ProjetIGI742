@@ -7,11 +7,11 @@ import java.util.*;
 public class Produit implements SujetDisponibilite {
 
 	private String titre;
-	private String dateSortie;
+	private Date dateSortie;
 	private String resume;
 	private String editeur;
-	private ArrayList<Exemplaire> listeExemplaires = new ArrayList<Exemplaire>();
-	private ArrayList<Membre> listeObservateurDisponibilite = new ArrayList<Membre>();
+	private ArrayList<Exemplaire> listeExemplaires;
+	private ArrayList<Membre> listeObservateurDisponibilite;
 	
 	public Produit() {
 	}
@@ -41,11 +41,11 @@ public class Produit implements SujetDisponibilite {
 		this.titre = titre;
 	}
 
-	public String getDateSortie() {
+	public Date getDateSortie() {
 		return dateSortie;
 	}
 
-	public void setDateSortie(String dateSortie) {
+	public void setDateSortie(Date dateSortie) {
 		this.dateSortie = dateSortie;
 	}
 

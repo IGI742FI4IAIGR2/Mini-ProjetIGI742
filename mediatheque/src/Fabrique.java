@@ -10,12 +10,12 @@ public class Fabrique {
 	/**
 	 * 
 	 */
-	public DVD creerProduit(String titre, String dateSortie, String resume, String editeur, String reference, GenreFilm genre, Realisateur realisateur) {
-			DVD produit = new DVD(titre, dateSortie, resume, editeur, reference, genre, realisateur);
+	public DVD creerProduit(String titre, Date dateSortie, String resume, String editeur, String reference, GenreFilm genre) {
+			DVD produit = new DVD(titre, dateSortie, resume, editeur, reference, genre);
 			return produit;
 	}
-	public Ouvrage creerProduit(String titre, String dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type, Auteur auteur) {
-		Ouvrage produit = new Ouvrage(titre, dateSortie, resume, editeur, codeISBN, type, auteur);
+	public Ouvrage creerProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type) {
+		Ouvrage produit = new Ouvrage(titre, dateSortie, resume, editeur, codeISBN, type);
 		return produit;
 }
 	
