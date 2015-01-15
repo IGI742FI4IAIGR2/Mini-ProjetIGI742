@@ -175,6 +175,16 @@ public class Mediatheque implements MediathequeObservatrice {
 		this.listeProduit.add(produit);
 	}
 	
+	/**
+	 * @author mikael
+	 * 
+	 */
+	public void ajouterExemplaire(Produit produit, EtatExemplaire etat, Boolean disponibilite){
+		Exemplaire exemplaire = fabrique.creerExemplaire(produit, this);
+		exemplaire.setEmplacement(this);
+		exemplaire.setDisponibilite(true);
+	}
+	
 }
 
 

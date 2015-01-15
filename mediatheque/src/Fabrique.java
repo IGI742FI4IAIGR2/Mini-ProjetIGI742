@@ -22,8 +22,8 @@ public class Fabrique {
 	/**
 	 * 
 	 */
-	public Exemplaire creerExemplaire(Produit produit){
-		Exemplaire exemplaire = new Exemplaire(produit);
+	public Exemplaire creerExemplaire(Produit produit, Mediatheque mediatheque){
+		Exemplaire exemplaire = new Exemplaire(produit, mediatheque);
 		return exemplaire;
 	}
 

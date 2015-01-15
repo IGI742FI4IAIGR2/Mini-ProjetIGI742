@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Exemplaire implements SujetEmplacement {
 
-	private String codeExemplaire;
+	private int codeExemplaire;
 	private EtatExemplaire etat;
 	private Boolean disponibilite;
 	private Mediatheque emplacement;
@@ -14,8 +14,17 @@ public class Exemplaire implements SujetEmplacement {
 	private Produit monProduit;
 	private ArrayList <MediathequeObservatrice>listeObservateurEmplacement;
 	
-	public Exemplaire(Produit produit) {
+	public Exemplaire(Produit produit, Mediatheque mediatheque) {
 		this.monProduit = produit;
+		this.maMediatheque=mediatheque;
+		codeExemplaire=1;
+		int i;
+		for(i=0;i<monProduit.getListeExemplaires().size();i++){
+			if(codeExemplaire<monProduit.getListeExemplaires().get(i).getCodeExemplaire()){
+				codeExemplaire=i+1;
+			}
+		}
+		
 		
 	}
 
@@ -25,7 +34,7 @@ public class Exemplaire implements SujetEmplacement {
 	public void setMonProduit(Produit monProduit) {
 		this.monProduit = monProduit;
 	}
-	public String getCodeExemplaire(){
+	public int getCodeExemplaire(){
 		return this.codeExemplaire;
 	}
 	public EtatExemplaire getEtat(){

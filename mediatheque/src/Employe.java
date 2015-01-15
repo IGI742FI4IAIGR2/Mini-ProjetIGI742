@@ -68,6 +68,14 @@ public class Employe extends Membre {
 		this.maMediatheque.ajouterProduit(titre, dateSortie, resume, editeur, codeISBN, type);	
 	}
 	
+	/**
+	 * @author mikael
+	 * Exemplaire
+	 */
+	public void ajouterExemplaire(Produit produit){
+		
+	}
+	
 	/**@author J�r�me & Nathan
 	 * @param
 	 */
