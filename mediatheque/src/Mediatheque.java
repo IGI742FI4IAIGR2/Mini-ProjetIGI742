@@ -88,9 +88,10 @@ public class Mediatheque implements MediathequeObservatrice {
 	 * @author mikael
 	 * @param Produit
 	 */
-	public void emprunterProduit(Produit produit, Membre membre) {
+	public Emprunt emprunterProduit(Produit produit, Membre membre) {
 		ArrayList<Exemplaire> listeExemplaires=produit.getListeExemplaires();
 		Exemplaire ex=null;
+		Emprunt emprunt=null;
 		boolean empruntPossible=false;
 		if(membre.getListeEmprunts().size()<5){
 			empruntPossible=true;
@@ -114,6 +115,7 @@ public class Mediatheque implements MediathequeObservatrice {
 		else{
 			System.out.print("Le produit n'est pas disponible, vous pouvez le réserver");
 		}
+		return emprunt;
 	}
 
 	/**

@@ -53,7 +53,10 @@ public class Membre extends Visiteur implements MembreObservateur {
 	 */
 	public void demandeEmprunt(Produit mProduit) {
 		if(this.monAbonnement.getDureeAbonnement() != DureeAbonnement.expire){
-			this.maMediateque.emprunterProduit(mProduit, this);
+			Emprunt emprunt =this.maMediateque.emprunterProduit(mProduit, this);
+			if(emprunt!=null){
+				this.listeEmprunts.add(emprunt);
+			}
 		}
 		else{
 			System.out.println("Vous n etes plus abonnee");
@@ -90,7 +93,7 @@ public class Membre extends Visiteur implements MembreObservateur {
 			System.out.println("Retour Ok");
 		}
 		else{
-			System.out.println("Restituion Impossible");
+			System.out.println("Restitution Impossible");
 		}
 	}
 	
