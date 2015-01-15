@@ -17,7 +17,7 @@ public class Reseau {
 		Ouvrage feeCarabine = e1.ajouterProduit("La Fée carabine", "1987", "L'inspecteur de police Vanini faisait un tour de quartier quand il est tué par une vieille dame maniant un P38...", "Gallimard", "2-07-040370-X", TypeOuvrage.Roman,pennac);
 		Membre m1 = e1.ajouterMembre("Dupont", "Georges", "3 rue du pont 74000 Annecy", "0404040404", "01/01/1965", new Abonnement(1,new GregorianCalendar(),DureeAbonnement.sixMois,TypeAbonnement.LivDVDPass));
 		Membre m2 = e1.ajouterMembre("Dupond", "Jean", "3 rue du pont 74000 Annecy", "0404040404", "01/01/1965", new Abonnement(1,new GregorianCalendar(),DureeAbonnement.sixMois,TypeAbonnement.LivDVDPass));
-		System.out.print(m1);
+		System.out.println(m1);
 		e1.ajouterExemplaire(feeCarabine, EtatExemplaire.Moyen, true);
 		
 		m1.demandeEmprunt(feeCarabine);

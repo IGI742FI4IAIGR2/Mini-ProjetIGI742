@@ -104,7 +104,7 @@ public class Mediatheque implements MediathequeObservatrice {
 			empruntPossible=true;
 		}
 		else{
-			System.out.print("Vous avez atteint le quota d'emprunt");
+			System.out.println("Vous avez atteint le quota d'emprunt");
 		}
 		
 		while(!empruntDispo && it.hasNext()){
@@ -116,10 +116,10 @@ public class Mediatheque implements MediathequeObservatrice {
 		if(empruntPossible&&empruntDispo){
 			fabrique.creerEmprunt(ex,membre);
 			ex.ajouterObservateurEmplacement(this);
-			System.out.print("Produit emprunté");
+			System.out.println("Produit emprunté");
 		}
 		else{
-			System.out.print("Le produit n'est pas disponible, vous pouvez le réserver");
+			System.out.println("Le produit n'est pas disponible, vous pouvez le réserver");
 		}
 		return emprunt;
 	}
@@ -191,7 +191,6 @@ public class Mediatheque implements MediathequeObservatrice {
 		}
 	public Ouvrage ajouterProduit(String titre, String dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type, Auteur auteur){
 		Ouvrage produit = fabrique.creerProduit(titre, dateSortie, resume, editeur, codeISBN, type, auteur);
-		System.out.print(produit);
 		this.listeProduit.add(produit);
 		return produit;
 		}
@@ -204,6 +203,7 @@ public class Mediatheque implements MediathequeObservatrice {
 		Exemplaire exemplaire = fabrique.creerExemplaire(produit, this);
 		exemplaire.setEmplacement(this);
 		exemplaire.setDisponibilite(true);
+		produit.getListeExemplaires().add(exemplaire);
 	}
 	
 }

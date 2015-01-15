@@ -12,7 +12,7 @@ public class Exemplaire implements SujetEmplacement {
 	private Mediatheque emplacement;
 	private Mediatheque maMediatheque;
 	private Produit monProduit;
-	private ArrayList <MediathequeObservatrice>listeObservateurEmplacement;
+	private ArrayList <MediathequeObservatrice>listeObservateurEmplacement= new ArrayList <MediathequeObservatrice>();
 	
 	public Exemplaire(Produit produit, Mediatheque mediatheque) {
 		this.monProduit = produit;
