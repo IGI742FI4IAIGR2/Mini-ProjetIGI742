@@ -94,13 +94,14 @@ public class EmployeTest extends TestCase {
 	 */
 	//encore un pb
 	public void testAjouterMembre() {
-		Membre m = new Membre();
+		Membre m = new Membre("Dupont","Jean","15 rue de rumilly 74000 Annecy","0450123596","22/12/1986");
+		m.setMonAbonnement(new Abonnement(1,new GregorianCalendar(),DureeAbonnement.sixMois,TypeAbonnement.LivDVDPass));
 		ArrayList<Membre> listeMembre = new ArrayList<Membre>();
 		Mediatheque media = new Mediatheque("Novel","3 rue de Novel 74000 Annecy",fabrique);
 		employe.setMaMediateque(media);
-		media.setListeMembre(listeMembre );
-		employe.ajouterMembre("Dupont", "Georges", "3 rue du pont 74000 Annecy", "0404040404", "01/01/1965", new Abonnement(1,new GregorianCalendar(),DureeAbonnement.sixMois,TypeAbonnement.LivDVDPass));
-		if(!media.getListeMembre().contains(m)){
+		media.setListeMembre(listeMembre);
+		employe.ajouterMembre("Dupont","Jean","15 rue de rumilly 74000 Annecy","0450123596","22/12/1986",new Abonnement(1,new GregorianCalendar(),DureeAbonnement.sixMois,TypeAbonnement.LivDVDPass));
+		if(!media.getListeMembre().get(0).equals(m)){
 			fail("Erreur");
 		}
 	}
