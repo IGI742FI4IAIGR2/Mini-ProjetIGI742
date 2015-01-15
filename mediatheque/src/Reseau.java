@@ -23,6 +23,9 @@ public class Reseau {
 		m1.demandeEmprunt(feeCarabine);
 		
 		m2.demandeEmprunt(feeCarabine);
+		m2.demandeReservation(feeCarabine);
+		m1.rendreEmprunt(media1, m1.getListeEmprunts().get(0));
+		
 	}
 
 }
