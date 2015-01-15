@@ -148,8 +148,14 @@ public class Mediatheque implements MediathequeObservatrice {
 	 */
 	public Membre creerMembre(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
 		Membre membre = fabrique.creerMembre(nom, prenom, adresse, numTelephone, dateNaissance);
-		int idMembre = this.getListeMembre().get(this.getListeMembre().size()-1).getIdMembre()+1;
-		membre.setIdMembre(idMembre);
+		int idEmploye;
+		if(this.getListeMembre().size()>0){
+			idEmploye = this.getListeMembre().get(this.getListeMembre().size()-1).getIdMembre()+1;
+		}
+		else{
+			idEmploye = 1;
+		}
+		membre.setIdMembre(idEmploye);
 		membre.setMaMediateque(this);
 		this.getListeMembre().add(membre);
 		return membre;
