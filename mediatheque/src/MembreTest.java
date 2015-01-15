@@ -7,16 +7,17 @@ public class MembreTest extends TestCase {
 	protected void setUp() throws Exception {
 	}
 	protected static Fabrique fabrique;
-	private Membre m1 = new Membre();// Création du membre	
-	private Produit p = new Produit();// Création d'un produit 
-	private Exemplaire exP = new Exemplaire(p);// Création d'un exemplaire de ce produit	
+	private Membre m1 = new Membre();// Crï¿½ation du membre	
+	private Produit p = new Produit();// Crï¿½ation d'un produit 
+	private Mediatheque media = new Mediatheque();
+	private Exemplaire exP = new Exemplaire(p, media);// Crï¿½ation d'un exemplaire de ce produit	
 	private Mediatheque Centre = new Mediatheque("Novel","3 rue de Novel 74000 Annecy",fabrique);
 	
 	public void testIdentification() {	
-		m1.setIdMembre("id74");
-		m1.setmdp();		
-		m1.identification("id74","1243");
-		if (m1.identification("id74","1243")) {
+		m1.setIdMembre(74);
+		m1.setMdp("1234");		
+		m1.identification(74,"1243");
+		if (m1.identification(74,"1243")) {
 			fail("ok");
 		}
 	}

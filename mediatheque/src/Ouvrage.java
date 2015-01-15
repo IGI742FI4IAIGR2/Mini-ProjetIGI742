@@ -10,13 +10,14 @@ public class Ouvrage extends Produit {
 	//D�claration des variables
 		private String 			codeISBN;
 		private TypeOuvrage 		type;
+		private Auteur auteur;
 		
 	public Ouvrage() {
 		super();
 	}
 	
-	public Ouvrage(String titre, Date dateSortie, String resume,
-			String editeur, String codeISBN2, TypeOuvrage type2) {
+	public Ouvrage(String titre, String dateSortie, String resume,
+			String editeur, String codeISBN2, TypeOuvrage type2, Auteur auteur) {
 		super();
 		this.setTitre(titre);
 		this.setDateSortie(dateSortie);
@@ -24,6 +25,7 @@ public class Ouvrage extends Produit {
 		this.setCodeISBN(codeISBN2);
 		this.setEditeur(editeur);
 		this.setType(type2);
+		this.auteur=auteur;
 	}
 	
 	//Getter et Setter
@@ -45,6 +47,12 @@ public class Ouvrage extends Produit {
 		public void setType(TypeOuvrage type)
 		{
 			this.type 			= type;
+		}
+		public void setAuteur(Auteur auteur){
+			this.auteur=auteur;
+		}
+		public Auteur getAuteur(){
+			return this.auteur;
 		}
 
 }

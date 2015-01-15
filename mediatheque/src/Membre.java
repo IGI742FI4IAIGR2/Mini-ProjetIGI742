@@ -113,8 +113,11 @@ public class Membre extends Visiteur implements MembreObservateur {
 		this.monAbonnement = monAbonnement;
 	}
 
-	public String setmdp(){
+	public String getMdp(){
 		return mdp;
+	}
+	public void setMdp(String mdp){
+		this.mdp=mdp;
 	}
 	
 	public int getIdMembre() {

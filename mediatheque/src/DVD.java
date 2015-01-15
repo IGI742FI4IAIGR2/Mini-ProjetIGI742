@@ -8,18 +8,20 @@ public class DVD extends Produit {
 
 	private String reference;
 	private GenreFilm genre;
+	private Realisateur realisateur;
 
 	public DVD() {
 	}
 
-	public DVD(String titre, Date dateSortie, String resume, String editeur,
-			String reference2, GenreFilm genre2) {
+	public DVD(String titre, String dateSortie, String resume, String editeur,
+			String reference2, GenreFilm genre2, Realisateur realisateur) {
 		this.setTitre(titre);
 		this.setDateSortie(dateSortie);
 		this.setgenre(genre2);
 		this.setResume(resume);
 		this.setEditeur(editeur);
 		this.setreference(reference2);
+		this.realisateur=realisateur;
 	}
 	
 	//on va donné une référence 
@@ -40,5 +42,11 @@ public class DVD extends Produit {
 	//on va récupéré le genre
 	public GenreFilm getgenre() {
 		return genre;
+	}
+	public void setRealisateur(Realisateur realisateur){
+		this.realisateur=realisateur;
+	}
+	public Realisateur getRealisateur(){
+		return this.realisateur;
 	}
 }

@@ -15,14 +15,17 @@ public class Mediatheque implements MediathequeObservatrice {
 		this.adresse=adresseC;
 		this.fabrique=fabriqueC;
 	}
+	public Mediatheque(){
+		
+	}
 
 	private String nom;
 	private String adresse;
 	Fabrique fabrique;
 
-	private ArrayList<Produit> listeProduit;
-	private ArrayList<Membre> listeMembre;
-	private ArrayList<Employe> listeEmploye;
+	private ArrayList<Produit> listeProduit=new ArrayList<Produit>();
+	private ArrayList<Membre> listeMembre = new ArrayList<Membre>();
+	private ArrayList<Employe> listeEmploye = new ArrayList<Employe>();
 	
 	/**
 	 * @author nathan
@@ -156,7 +159,13 @@ public class Mediatheque implements MediathequeObservatrice {
 	 */
 	public Employe creerEmploye(String nom, String prenom, String adresse, String numTelephone, String dateNaissance){
 		Employe employe = fabrique.creerEmploye(nom, prenom, adresse, numTelephone, dateNaissance);
-		int idEmploye = this.getListeEmploye().get(this.getListeEmploye().size()-1).getIdEmploye()+1;
+		int idEmploye, i;
+		if(this.getListeEmploye().size()>0){
+			idEmploye = this.getListeEmploye().get(this.getListeEmploye().size()-1).getIdEmploye()+1;
+		}
+		else{
+			idEmploye = 1;
+		}
 		employe.setIdMembre(idEmploye);
 		employe.setMaMediateque(this);
 		employe.setMonAbonnement(new Abonnement());
@@ -166,13 +175,16 @@ public class Mediatheque implements MediathequeObservatrice {
 	/**
 	 * @author mikael
 	 */
-	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur, String reference, GenreFilm genre){
-		DVD produit = fabrique.creerProduit(titre, dateSortie, resume, editeur, reference, genre);
+	public DVD ajouterProduit(String titre, String dateSortie, String resume, String editeur, String reference, GenreFilm genre, Realisateur realisateur){
+		DVD produit = fabrique.creerProduit(titre, dateSortie, resume, editeur, reference, genre, realisateur);
 		this.listeProduit.add(produit);
+		return produit;
 	}
-	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type){
-		Ouvrage produit = fabrique.creerProduit(titre, dateSortie, resume, editeur, codeISBN, type);
+	public Ouvrage ajouterProduit(String titre, String dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type, Auteur auteur){
+		Ouvrage produit = fabrique.creerProduit(titre, dateSortie, resume, editeur, codeISBN, type, auteur);
+		System.out.print(produit);
 		this.listeProduit.add(produit);
+		return produit;
 	}
 	
 	/**

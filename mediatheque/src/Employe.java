@@ -57,23 +57,25 @@ public class Employe extends Membre {
 	 * @author mikael
 	 * DVD
 	 */
-	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur,String reference, GenreFilm genre){
-		this.maMediatheque.ajouterProduit(titre, dateSortie, resume, editeur, reference, genre);	
+	public DVD ajouterProduit(String titre, String dateSortie, String resume, String editeur,String reference, GenreFilm genre, Realisateur realisateur){
+		DVD produit = this.maMediatheque.ajouterProduit(titre, dateSortie, resume, editeur, reference, genre, realisateur);
+		return produit;
 	}
 	/**
 	 * @author mikael
 	 * Ouvrage
 	 */
-	public void ajouterProduit(String titre, Date dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type){
-		this.maMediatheque.ajouterProduit(titre, dateSortie, resume, editeur, codeISBN, type);	
+	public Ouvrage ajouterProduit(String titre, String dateSortie, String resume, String editeur, String codeISBN, TypeOuvrage type, Auteur auteur){
+		Ouvrage produit = this.maMediatheque.ajouterProduit(titre, dateSortie, resume, editeur, codeISBN, type, auteur);	
+		return produit;
 	}
 	
 	/**
 	 * @author mikael
 	 * Exemplaire
 	 */
-	public void ajouterExemplaire(Produit produit){
-		
+	public void ajouterExemplaire(Produit produit,EtatExemplaire etat, Boolean disponibilite){
+		this.maMediatheque.ajouterExemplaire(produit, etat, disponibilite);
 	}
 	
 	/**@author J�r�me & Nathan
@@ -117,9 +119,10 @@ public class Employe extends Membre {
 	 * @author J�r�me & Nathan
 	 * @param 
 	 */
-	public void ajouterMembre(String nom, String prenom, String adresse, String numTelephone, String dateNaissance, Abonnement abonnement) {
+	public Membre ajouterMembre(String nom, String prenom, String adresse, String numTelephone, String dateNaissance, Abonnement abonnement) {
 		Membre membre = this.getMaMediateque().creerMembre(nom, prenom, adresse, numTelephone, dateNaissance);
 		membre.setMonAbonnement(abonnement);
+		return membre;
 	}
 	/**
 	 * @author mikael
