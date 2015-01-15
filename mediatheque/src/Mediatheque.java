@@ -107,7 +107,7 @@ public class Mediatheque implements MediathequeObservatrice {
 			System.out.print("Vous avez atteint le quota d'emprunt");
 		}
 		
-		while(!empruntDispo | it.hasNext()){
+		while(!empruntDispo && it.hasNext()){
 			ex = it.next();
 			if(ex.getDisponibilite()){
 				empruntDispo=true;
