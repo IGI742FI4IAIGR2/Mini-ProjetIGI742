@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-
 import junit.framework.TestCase;
+import java.util.GregorianCalendar;
 
 /**
  * @author NATHAN
@@ -22,7 +22,8 @@ public class EmployeTest extends TestCase {
 	 */
 	public void testModifierEtatExemplaire() {
 		Produit p = new Produit();
-		Exemplaire ex = new Exemplaire(p);
+		Mediatheque media = new Mediatheque();
+		Exemplaire ex = new Exemplaire(p, media);
 		ex.setEtat(EtatExemplaire.Mauvais);
 		employe.modifierEtatExemplaire(ex, EtatExemplaire.Bon);
 		if (!EtatExemplaire.Bon.equals(ex.getEtat())){
@@ -98,7 +99,7 @@ public class EmployeTest extends TestCase {
 		Mediatheque media = new Mediatheque("Novel","3 rue de Novel 74000 Annecy",fabrique);
 		employe.setMaMediateque(media);
 		media.setListeMembre(listeMembre );
-		employe.ajouterMembre(m);
+		employe.ajouterMembre("Dupont", "Georges", "3 rue du pont 74000 Annecy", "0404040404", "01/01/1965", new Abonnement(1,new GregorianCalendar(),DureeAbonnement.sixMois,TypeAbonnement.LivDVDPass));
 		if(!media.getListeMembre().contains(m)){
 			fail("Erreur");
 		}

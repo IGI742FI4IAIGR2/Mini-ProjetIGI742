@@ -15,7 +15,7 @@ public class Visiteur extends Personne {
 	/**
 	 * 
 	 */
-	public Mediatheque maMediatheque;
+	private Mediatheque maMediatheque;
 	
 	/** 
 	 * retourne la liste des produits pr�sents dans la m�diath�que
