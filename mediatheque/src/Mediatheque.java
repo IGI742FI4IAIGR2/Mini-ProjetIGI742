@@ -118,7 +118,7 @@ public class Mediatheque implements MediathequeObservatrice {
 			ex.ajouterObservateurEmplacement(this);
 			ex.setDisponibilite(false);
 			membre.getListeEmprunts().add(emprunt);
-			System.out.println("Produit emprunté : "+ex.getMonProduit().getTitre()+" exemplaire : "+ex.getCodeExemplaire());
+			System.out.println("Produit emprunté : "+ex.getMonProduit().getTitre()+" exemplaire : "+ex.getCodeExemplaire()+" par "+membre.getNom()+" "+membre.getPrenom());
 		}
 		else{
 			System.out.println("Le produit n'est pas disponible, vous pouvez le réserver");
