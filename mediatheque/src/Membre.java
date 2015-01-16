@@ -89,8 +89,7 @@ public class Membre extends Visiteur implements MembreObservateur {
 		if(this.listeEmprunts.contains(mEmprunt) && bRendre){ //On verifie si l'emprunt est dans la liste et si on peut restituer
 			index = this.listeEmprunts.lastIndexOf(mEmprunt); //On recupere l index de l emprunt dans la liste
 			this.listeEmprunts.get(index).restituer(mMedia);  //On appel la methode de restituion
-			this.listeEmprunts.remove(index);				  //On retire l emprunt de la liste
-			System.out.println("Retour Ok");
+
 		}
 		else{
 			System.out.println("Restitution Impossible");

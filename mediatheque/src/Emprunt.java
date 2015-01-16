@@ -45,13 +45,17 @@ public class Emprunt {
 	 */
 	public void restituer(Mediatheque cetteMediatheque) {
 		ex.setDisponibilite(true);
+		ex.setEmplacement(cetteMediatheque);
+		membre.getListeEmprunts().remove(membre.getListeEmprunts().indexOf(this));				  //On retire l emprunt de la liste
+		System.out.println("Retour Ok");
 		if (ex.getMonProduit().getListeObservateurDisponibilite().size() > 0){
 			ex.getMonProduit().notifierObservateurDispo();
 		}
-		ex.setEmplacement(cetteMediatheque);
+		
 	}
 	
 	/**
+	 * @author mikael
 	 * Relance en cas d'emprunt trop long
 	 */
 	public int relance(){
